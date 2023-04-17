@@ -1,0 +1,29 @@
+/* TODO: Make the attendance-box gray with darker grey border */
+/* TODO: Add padding and space between the h3 and p */
+/* TODO: When card is clicked display hidden-options = a box with a radio form for attendance */
+/* TODO: When an option is selected it will change the background color of the student box */
+
+.attendance-box {
+    width: 180px;
+    height: 100px;
+
+    background-color: gray;
+    border: 3px solid rgb(61, 61, 61);
+    margin: 10px;
+
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+}
+
+.hidden-options {
+    display: none;
+    height: 300px;
+    width: 200px;
+
+    background-color:tan;
+
+}
