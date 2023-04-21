@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-import Card from './Card.js';
+import CardArray from './CardArray.js';
 
 class App extends Component {
   constructor() {
@@ -19,25 +19,27 @@ class App extends Component {
     ]
 
     const getData = async function() {
-      const allUrls = urls.map(url => fetch(url))
-      try {
-        for await (let response of allUrls) {
-          const data = await response.json()
-          console.log("data", data.flat())
-          this.setState({students:data.flat()})
-        }
-      } catch (err) {
-        console.log("Promise Error -- ", err)
+      let arr = [];
+      const arrayOfPromises = urls.map(url => fetch(url));
+      for await (let request of arrayOfPromises) {
+        let data = await request.json();
+        arr.push(data.results)
       }
+      updateStudents(arr.flat());
+    }
+
+    const updateStudents = (data) => {
+      return this.setState({students:data})
     }
 
     getData();
 
   }
+  
 
 
   render() {
-   
+    
     return ( 
       <div className="App">
         <header className="App-header">
@@ -45,7 +47,7 @@ class App extends Component {
         </header>
     
       <main>
-        <Card characters={this.students}/>
+        <CardArray students={this.state.students}/>
       </main>
 
       </div>
