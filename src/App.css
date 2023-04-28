@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,10 @@
   justify-content: center;
   font-size: 2rem;
   color: white;
+}
+
+main {
+  background-image: linear-gradient( 109.6deg,  rgba(36,45,57,1) 11.2%, rgba(16,37,60,1) 51.2%, rgba(0,0,0,1) 98.6% );
 }
 
 

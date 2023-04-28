@@ -2,16 +2,15 @@ import React from "react";
 import Card from './Card.js'
 
 
-const CardArray = ({students}) => {
+const CardArray = ({characters}) => {
     return (
         <>
             {
-                students.map((user, i) => {
-                    console.log('student:', i)
+                characters.map((user, i) => {
                     return (
                         <Card
                         key={i}
-                        name={students[i].name}
+                        name={characters[i].name}
                         />
                     )
                 } )

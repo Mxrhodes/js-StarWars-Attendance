@@ -5,9 +5,9 @@ import "./Card.css";
 const Card = (props) => {
     const { name } = props;
     return (
-        <div className="attendance-box">
+        <div className="front-card">
             <h3>{name}</h3>
-            <p>Attendance Status</p>
+            <button>Attendance Status</button>
         </div>
     )
 }

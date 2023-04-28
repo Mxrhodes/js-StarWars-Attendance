@@ -6,7 +6,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      students: []
+      characters: []
     }
   }
 
@@ -15,7 +15,7 @@ class App extends Component {
     const urls = [
       "https://swapi.py4e.com/api/people/?page=1", 
       "https://swapi.py4e.com/api/people/?page=2", 
-      "https://swapi.py4e.com/api/people/?page=3"
+      // "https://swapi.py4e.com/api/people/?page=3"
     ]
 
     const getData = async function() {
@@ -25,11 +25,11 @@ class App extends Component {
         let data = await request.json();
         arr.push(data.results)
       }
-      updateStudents(arr.flat());
+      updateCharacters(arr.flat());
     }
 
-    const updateStudents = (data) => {
-      return this.setState({students:data})
+    const updateCharacters = (data) => {
+      return this.setState({characters:data})
     }
 
     getData();
@@ -40,16 +40,20 @@ class App extends Component {
 
   render() {
     
+    const filteredStarwars = this.state.characters.filter( user => {
+      console.log('user', user.name)
+      return !user.name.includes("Wilhuff Tarkin") && !user.name.includes("Palpatine")
+    })
     return ( 
       <div className="App">
         <header className="App-header">
-          <h1>Starwars Attendance</h1>
+          <h1><img src='https://en.wikipedia.org/wiki/File:Star_Wars_Logo.svg' alt='Starwars Logo'></img> </h1>
         </header>
-    
-      <main>
-        <CardArray students={this.state.students}/>
-      </main>
-
+        <main>
+          <div className='card-container'>
+            <CardArray characters={filteredStarwars}/>
+          </div>
+        </main>
       </div>
     )
   }
