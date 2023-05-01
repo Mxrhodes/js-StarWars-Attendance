@@ -41,7 +41,6 @@ class App extends Component {
   render() {
     
     const filteredStarwars = this.state.characters.filter( user => {
-      console.log('user', user.name)
       return !user.name.includes("Wilhuff Tarkin") && !user.name.includes("Palpatine")
     })
     return ( 

@@ -8,8 +8,17 @@
     height: 500px;
 
     background-color: gray;
-    border: 3px solid rgb(61, 61, 61);
+    /* border: 3px solid rgb(5, 5, 5); */
     margin: 10px;
+
+    border-radius: 1em;
+    border: .15em solid white;
+    box-shadow: inset 0 0 0 .2em tomato,
+              inset 0 0 1em .3em tomato,
+              inset 1em 1em .4em black(.6),
+              0 0 0 .2em tomato,
+              0 0 1em .3em tomato,
+              1em 1em .4em black(.6)
 
 }
 
@@ -37,3 +46,18 @@ p {
 
 }
 
+/* .skywalker {
+    background-position: "47% 75%"
+}
+
+.left {
+    background-position: "55% 75%"
+} jek, solo, anakin, beru
+
+.super-left {
+    background-position: "70% 75%"
+} yoda, wedge, biggs, 
+
+.right {
+    background-position: "0% 75%"
+} chew,  */

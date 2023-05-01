@@ -1,6 +1,5 @@
 import React from "react";
-import Card from './Card.js'
-
+import FrontCard from './FrontCard.js';
 
 const CardArray = ({characters}) => {
     return (
@@ -8,7 +7,7 @@ const CardArray = ({characters}) => {
             {
                 characters.map((user, i) => {
                     return (
-                        <Card
+                        <FrontCard
                         key={i}
                         name={characters[i].name}
                         />
