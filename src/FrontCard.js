@@ -2,8 +2,6 @@ import React from "react";
 import "./Card.css";
 import ImageObject from "./ImageObject";
 
-// TODO: fill in with starwars api
-
 
 const FrontCard = (props) => {
     const { name } = props;
@@ -11,7 +9,7 @@ const FrontCard = (props) => {
     let position = ImageObject[name][1];
 
     return (
-        <div className={"front-card " + name } style={{ backgroundImage: `url(${baseUrl})`,
+        <div className={"card front " + name } style={{ backgroundImage: `url(${baseUrl})`,
                                             backgroundSize: "cover",
                                             backgroundRepeat: "no-repeat",
                                             backgroundPosition: position

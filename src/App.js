@@ -6,21 +6,25 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      characters: []
+      characters: [],
+      films: [],
     }
   }
 
   componentDidMount() {
 
-    const urls = [
+    const peopleUrls = [
       "https://swapi.py4e.com/api/people/?page=1", 
       "https://swapi.py4e.com/api/people/?page=2", 
       // "https://swapi.py4e.com/api/people/?page=3"
     ]
 
-    const getData = async function() {
+    const filmsUrl = "https://swapi.py4e.com/api/films";
+
+
+    const fetchPeopleJSON = async function() {
       let arr = [];
-      const arrayOfPromises = urls.map(url => fetch(url));
+      const arrayOfPromises = peopleUrls.map(url => fetch(url));
       for await (let request of arrayOfPromises) {
         let data = await request.json();
         arr.push(data.results)
@@ -32,7 +36,19 @@ class App extends Component {
       return this.setState({characters:data})
     }
 
-    getData();
+    async function fetchFilmsJSON() {
+      const response = await fetch(filmsUrl);
+      let data = await response.json();
+      updateFilms(data)
+  }
+
+  const updateFilms = (data) => {
+    //console.log('film data', data.results)
+    return this.setState({films:data.results})
+  }
+
+    fetchPeopleJSON();
+    fetchFilmsJSON();
 
   }
   
@@ -50,7 +66,10 @@ class App extends Component {
         </header>
         <main>
           <div className='card-container'>
-            <CardArray characters={filteredStarwars}/>
+            <CardArray 
+              characters={filteredStarwars}
+              films={this.state.films}
+              />
           </div>
         </main>
       </div>

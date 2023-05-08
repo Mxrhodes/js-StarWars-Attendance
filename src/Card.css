@@ -3,7 +3,7 @@
 /* TODO: When card is clicked display hidden-options = a box with a radio form for attendance */
 /* TODO: When an option is selected it will change the background color of the student box */
 
-.front-card {
+.card {
     width: 400px;
     height: 500px;
 
@@ -22,6 +22,17 @@
 
 }
 
+.front {
+    display: none;
+    
+}
+
+
+.back {
+    
+
+}
+
 p {
     color: white;
     text-align: center;
@@ -37,27 +48,4 @@ p {
 }
 
 
-.back-card {
-    display: none;
-    height: 300px;
-    width: 200px;
 
-    background-color:tan;
-
-}
-
-/* .skywalker {
-    background-position: "47% 75%"
-}
-
-.left {
-    background-position: "55% 75%"
-} jek, solo, anakin, beru
-
-.super-left {
-    background-position: "70% 75%"
-} yoda, wedge, biggs, 
-
-.right {
-    background-position: "0% 75%"
-} chew,  */
