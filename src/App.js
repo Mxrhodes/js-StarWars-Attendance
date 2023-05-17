@@ -16,7 +16,6 @@ class App extends Component {
     const peopleUrls = [
       "https://swapi.py4e.com/api/people/?page=1", 
       "https://swapi.py4e.com/api/people/?page=2", 
-      // "https://swapi.py4e.com/api/people/?page=3"
     ]
 
     const filmsUrl = "https://swapi.py4e.com/api/films";
@@ -57,12 +56,13 @@ class App extends Component {
   render() {
     
     const filteredStarwars = this.state.characters.filter( user => {
+      // Users below were removed for less complexity
       return !user.name.includes("Wilhuff Tarkin") && !user.name.includes("Palpatine")
     })
     return ( 
       <div className="App">
         <header className="App-header">
-          <h1><img src='https://en.wikipedia.org/wiki/File:Star_Wars_Logo.svg' alt='Starwars Logo'></img> </h1>
+          <h1>STARWARS CARDS</h1>
         </header>
         <main>
           <div className='card-container'>

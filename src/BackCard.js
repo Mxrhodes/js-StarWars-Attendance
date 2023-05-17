@@ -11,20 +11,21 @@ const BackCard = (props) => {
 
     const { name, height, mass, gender, films, all_films} = props;
 
-    //console.log(name + ': ' + films)
 
+    let filmTitles = [];
     for(let f of all_films){
-        debugger;
         for(let i=0; i < films.length;i++){
-            //Had to take it back to the basics with these loops beacuse It would nto work
-            // Just now, after looking closely, I learned that the urls are from 2 different swapi apis.
-            // Now to find out why
             if(films[i] === f.url){
-                console.log('hahah', f.title)
+                filmTitles.push(f.title)
             }
         }
-
     }
+
+        const filmList = filmTitles.map((title, i) =>
+            <p key={title}>
+                {title}
+            </p>
+        );
 
 
     // USE A GRID DISPLAY FOR THE CARD DESIGN
@@ -39,7 +40,9 @@ const BackCard = (props) => {
                 <p>Mass: {mass}</p>
                 <div className="film-area">
                     <h2>Films</h2>
-                    <p>{}</p>
+                    <ul>
+                        {filmList}
+                    </ul>
                 </div>
             </section>
             <section className="films"></section>
