@@ -65,12 +65,10 @@ class App extends Component {
           <h1>STARWARS CARDS</h1>
         </header>
         <main>
-          <div className='card-container'>
-            <CardArray 
-              characters={filteredStarwars}
-              films={this.state.films}
-              />
-          </div>
+          <CardArray 
+            characters={filteredStarwars}
+            films={this.state.films}
+          />
         </main>
       </div>
     )

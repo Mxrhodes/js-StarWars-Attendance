@@ -8,8 +8,8 @@ import './Card.css';
 //const Films= = (props)
 // 
 const BackCard = (props) => {
-
-    const { name, height, mass, gender, films, all_films} = props;
+    const { name, height, mass, gender, films } = props.selected;
+    const { all_films } = props;
 
 
     let filmTitles = [];
@@ -32,22 +32,22 @@ const BackCard = (props) => {
 // IN THE MEANTIME JUST SHOW ALL THE DATA
 
     return (
-        <div className={ "card back " + name }>
-            <h1 className="title">{name}</h1>
-            <section className="height-gender">
-                <p>Species: {gender === "n/a" ? "robot" : gender}</p>
-                <p>Height: {height}</p>
-                <p>Mass: {mass}</p>
-                <div className="film-area">
-                    <h2>Films</h2>
-                    <ul>
-                        {filmList}
-                    </ul>
-                </div>
-            </section>
-            <section className="films"></section>
-            <section className="starships"></section>
-        </div>
+        <>
+            <div className={ "back card " + name }>
+                <h1 className="title">{name}</h1>
+                <section className="height-gender">
+                    <p>Species: {gender === "n/a" ? "robot" : gender}</p>
+                    <p>Height: {height}</p>
+                    <p>Mass: {mass}</p>
+                    <div className="film-area">
+                        <h2>Films</h2>
+                        <ul>
+                            {filmList}
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </>
     )
 }
 
