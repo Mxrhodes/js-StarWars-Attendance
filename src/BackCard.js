@@ -33,9 +33,9 @@ const BackCard = (props) => {
 
     return (
         <>
-            <div className={ "back card " + name }>
+            <div className={ "back card" }>
                 <h1 className="title">{name}</h1>
-                <section className="height-gender">
+                <section className="card-details">
                     <p>Species: {gender === "n/a" ? "robot" : gender}</p>
                     <p>Height: {height}</p>
                     <p>Mass: {mass}</p>

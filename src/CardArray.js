@@ -5,15 +5,14 @@ import './Card.css';
 
 
 const CardArray = ({characters, films}) => {
-
-    const [selected, setSelected] = useState(characters[0]);
+    const [selected, setSelected] = useState([]);
+    console.log('selected', selected);
 
 
     return (
         <>
             <div className='selected-card'>
-                <h1>Pizza</h1>
-                <BackCard selected={selected} all_films={films} />
+                { selected.name && <BackCard selected={selected} all_films={films} /> }
             </div>
             <div className='card-container'>
                 {
@@ -21,6 +20,7 @@ const CardArray = ({characters, films}) => {
                         const handleClick = () => {
                             console.log('user', user)
                             setSelected(user)
+                            console.log('selected 222', selected)
                         }
                         return (
                             <>

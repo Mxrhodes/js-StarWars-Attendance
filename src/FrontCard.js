@@ -18,12 +18,11 @@ const FrontCard = (props) => {
 
     return (
         <>
-            <div onClick={handleClick} className={"front card " + name } style={{ 
+            <div onClick={handleClick} className={"front card "} style={{ 
                                         backgroundImage: `url(${baseUrl})`,
                                         backgroundSize: "cover",
                                         backgroundRepeat: "no-repeat",
                                         backgroundPosition: position,   }}>
-                <h3>{name}</h3>
             </div>
         </>
     )
